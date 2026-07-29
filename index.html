@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAE Competitiveness · IMD 2025 · Department of Finance, Dubai</title>
+<style>
+/* ── Design tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg:       #EEF2F8;
+  --surf:     #FFFFFF;
+  --surf2:    #F3F6FB;
+  --navy:     #002766;
+  --navy2:    #004BAD;
+  --gold:     #B8921A;
+  --gold2:    #D9A820;
+  --text:     #0F1E35;
+  --text2:    #4A6278;
+  --text3:    #7A96AE;
+  --bdr:      #D4DCE8;
+  --bdr2:     #E6ECF4;
+  --ok-bg:#EBF6EF;--ok-t:#155728;--ok-b:#A3D9B1;
+  --wn-bg:#FFF8E5;--wn-t:#7A5600;--wn-b:#F5C842;
+  --bd-bg:#FDECEA;--bd-t:#7B1A1A;--bd-b:#F5A6A6;
+  --nt-bg:#EEF2F8;--nt-t:#4A6278;--nt-b:#C0CEDB;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#0A1525;--surf:#111E30;--surf2:#172540;
+  --navy:#1560CC;--navy2:#3A80E8;--gold:#D9A820;--gold2:#F0C040;
+  --text:#E4EAF4;--text2:#8AA8C0;--text3:#57718A;
+  --bdr:#1E3250;--bdr2:#162840;
+  --ok-bg:#0F2E1A;--ok-t:#72CC94;--ok-b:#1D5C35;
+  --wn-bg:#2E2000;--wn-t:#FFCC44;--wn-b:#5C3E00;
+  --bd-bg:#2E0C0C;--bd-t:#F5A6A6;--bd-b:#6B1A1A;
+  --nt-bg:#172540;--nt-t:#8AA8C0;--nt-b:#2A3E58;
+}}
+:root[data-theme=dark]{
+  --bg:#0A1525;--surf:#111E30;--surf2:#172540;
+  --navy:#1560CC;--navy2:#3A80E8;--gold:#D9A820;--gold2:#F0C040;
+  --text:#E4EAF4;--text2:#8AA8C0;--text3:#57718A;
+  --bdr:#1E3250;--bdr2:#162840;
+  --ok-bg:#0F2E1A;--ok-t:#72CC94;--ok-b:#1D5C35;
+  --wn-bg:#2E2000;--wn-t:#FFCC44;--wn-b:#5C3E00;
+  --bd-bg:#2E0C0C;--bd-t:#F5A6A6;--bd-b:#6B1A1A;
+  --nt-bg:#172540;--nt-t:#8AA8C0;--nt-b:#2A3E58;
+}
+:root[data-theme=light]{
+  --bg:#EEF2F8;--surf:#FFFFFF;--surf2:#F3F6FB;
+  --navy:#002766;--navy2:#004BAD;--gold:#B8921A;--gold2:#D9A820;
+  --text:#0F1E35;--text2:#4A6278;--text3:#7A96AE;
+  --bdr:#D4DCE8;--bdr2:#E6ECF4;
+  --ok-bg:#EBF6EF;--ok-t:#155728;--ok-b:#A3D9B1;
+  --wn-bg:#FFF8E5;--wn-t:#7A5600;--wn-b:#F5C842;
+  --bd-bg:#FDECEA;--bd-t:#7B1A1A;--bd-b:#F5A6A6;
+  --nt-bg:#EEF2F8;--nt-t:#4A6278;--nt-b:#C0CEDB;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+a{color:var(--navy2)}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--text);font-size:14px;line-height:1.65;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* ── Trend colours ─────────────────────────────────────────────────── */
+.up{color:#1A7A3C}.down{color:#B52B2B}.flat{color:var(--text3)}
+@media(prefers-color-scheme:dark){.up{color:#6ED897}.down{color:#F08080}}
+:root[data-theme=dark] .up{color:#6ED897}
+:root[data-theme=dark] .down{color:#F08080}
+:root[data-theme=light] .up{color:#1A7A3C}
+:root[data-theme=light] .down{color:#B52B2B}
+
+/* ── Page header ───────────────────────────────────────────────────── */
+.ph{background:#002766;border-bottom:3px solid var(--gold);padding:16px 0}
+.ph-in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ph-brand{display:flex;align-items:center;gap:11px}
+.ph-flag{font-size:26px;line-height:1}
+.ph-dept{font-size:14px;font-weight:700;color:#fff}
+.ph-govt{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}
+.ph-centre{text-align:center;flex:1;min-width:160px}
+.ph-title{font-size:18px;font-weight:700;color:#fff;letter-spacing:.2px}
+.ph-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px}
+.ph-meta{font-size:11px;color:rgba(255,255,255,.45);white-space:nowrap}
+
+/* ── Main ──────────────────────────────────────────────────────────── */
+main{padding:36px 0 64px}
+.sec{margin-bottom:40px}
+.sh{
+  display:flex;align-items:baseline;gap:8px;
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--navy);padding-bottom:9px;margin-bottom:16px;
+  border-bottom:2px solid var(--bdr);
+}
+.sh-sub{font-size:11px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--text3)}
+.note{font-size:12px;color:var(--text2);margin:-8px 0 16px;line-height:1.6}
+
+/* ── Hero ──────────────────────────────────────────────────────────── */
+.hero{
+  background:#002766;border-radius:10px;
+  padding:40px 44px;
+  display:grid;grid-template-columns:1fr auto;gap:24px 48px;align-items:center;
+  box-shadow:0 8px 32px rgba(0,0,0,.22);
+  border-top:3px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;top:0;right:0;bottom:0;left:58%;
+  background:linear-gradient(115deg,transparent 0%,rgba(255,255,255,.025) 100%);
+  pointer-events:none;
+}
+.h-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:8px;
+}
+.h-num{
+  font-size:92px;font-weight:900;line-height:.88;
+  color:#fff;letter-spacing:-4px;font-variant-numeric:tabular-nums;
+}
+.h-num sup{
+  font-size:30px;font-weight:700;letter-spacing:0;line-height:0;
+  vertical-align:super;color:var(--gold2);
+}
+.h-lbl{font-size:14px;color:rgba(255,255,255,.6);margin-top:10px}
+.h-trend{margin-top:14px;font-size:13px;font-weight:700}
+.h-trend .up  {color:#6ED897}
+.h-trend .down{color:#F5A6A6}
+.h-trend .flat{color:rgba(255,255,255,.4)}
+
+.h-stats{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.h-stat{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:12px 18px;text-align:center;min-width:106px;
+}
+.h-sv{font-size:21px;font-weight:800;color:#fff;line-height:1.1;font-variant-numeric:tabular-nums}
+.h-sl{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.6px;margin-top:3px}
+
+/* ── Badges ────────────────────────────────────────────────────────── */
+.bdg{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;border:1px solid;white-space:nowrap;letter-spacing:.2px}
+.bdg-ok  {background:var(--ok-bg);color:var(--ok-t);border-color:var(--ok-b)}
+.bdg-wn  {background:var(--wn-bg);color:var(--wn-t);border-color:var(--wn-b)}
+.bdg-bd  {background:var(--bd-bg);color:var(--bd-t);border-color:var(--bd-b)}
+.bdg-nt  {background:var(--nt-bg);color:var(--nt-t);border-color:var(--nt-b)}
+
+/* ── Factor cards ──────────────────────────────────────────────────── */
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fc{
+  background:var(--surf);border:1px solid var(--bdr);border-radius:8px;
+  padding:18px 16px;box-shadow:0 2px 8px rgba(0,0,0,.05);
+  display:flex;flex-direction:column;gap:6px;
+  border-left:3px solid var(--bdr);
+}
+.fc.ok{border-left-color:var(--ok-b)}.fc.wn{border-left-color:var(--wn-b)}.fc.bd{border-left-color:var(--bd-b)}
+.fc-name{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text3)}
+.fc-rank{font-size:32px;font-weight:900;color:var(--navy);line-height:1.05;font-variant-numeric:tabular-nums}
+.fc-t   {font-size:11px;font-weight:600}
+
+/* ── Finance panel ─────────────────────────────────────────────────── */
+.fin{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.fin-hdr,.fin-row{display:grid;grid-template-columns:2fr 90px 110px 160px;align-items:center;gap:12px;padding:11px 20px;border-bottom:1px solid var(--bdr2)}
+.fin-row:last-child{border-bottom:none}
+.fin-hdr{background:var(--surf2);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);padding-top:9px;padding-bottom:9px}
+.fin-m{font-weight:600;color:var(--text)}
+.fin-r{font-size:20px;font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums}
+.fin-t{font-size:12px;font-weight:600}
+
+/* ── GCC panel ─────────────────────────────────────────────────────── */
+.gcc{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.gcc-hdr,.gcc-row{display:grid;grid-template-columns:100px 1fr 130px 2fr;align-items:center;gap:12px;padding:11px 20px;border-bottom:1px solid var(--bdr2)}
+.gcc-row:last-child{border-bottom:none}
+.gcc-hdr{background:var(--surf2);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);padding-top:9px;padding-bottom:9px}
+.gcc-uae{background:rgba(0,75,173,.05)}
+@media(prefers-color-scheme:dark){.gcc-uae{background:rgba(58,128,232,.08)}}
+:root[data-theme=dark] .gcc-uae{background:rgba(58,128,232,.08)}
+:root[data-theme=light] .gcc-uae{background:rgba(0,75,173,.05)}
+.gcc-p{font-size:11px;font-weight:700;color:var(--text3)}
+.gcc-uae .gcc-p{color:var(--navy)}
+.gcc-n{font-size:14px;font-weight:600;display:flex;align-items:center;gap:7px}
+.gcc-uae .gcc-n{font-weight:800;color:var(--navy)}
+.gcc-r{font-size:14px;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
+.gcc-uae .gcc-r{color:var(--navy)}
+.gcc-bg{background:var(--bdr2);border-radius:3px;height:8px;overflow:hidden}
+.gcc-b{height:100%;border-radius:3px}
+.gcc-bu{background:var(--navy2)}.gcc-bd{background:var(--text3);opacity:.4}
+
+/* ── World panel ───────────────────────────────────────────────────── */
+.wld{
+  background:var(--surf);border:1px solid var(--bdr);border-radius:8px;
+  overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05);
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.wld-r{display:flex;align-items:center;gap:14px;padding:11px 20px;border-bottom:1px solid var(--bdr2);font-size:13px}
+.wld-r:nth-child(odd){border-right:1px solid var(--bdr2)}
+.wld-r:nth-last-child(-n+2){border-bottom:none}
+.wld-uae{background:rgba(0,75,173,.04)}
+@media(prefers-color-scheme:dark){.wld-uae{background:rgba(58,128,232,.07)}}
+:root[data-theme=dark] .wld-uae{background:rgba(58,128,232,.07)}
+:root[data-theme=light] .wld-uae{background:rgba(0,75,173,.04)}
+.wld-pos{width:30px;font-size:14px;font-weight:800;color:var(--text3);font-variant-numeric:tabular-nums;flex-shrink:0}
+.wld-uae .wld-pos{color:var(--navy)}
+.wld-nm{flex:1}
+.wld-uae .wld-nm{font-weight:700;color:var(--navy)}
+.w-tag{font-size:10px;font-weight:700;letter-spacing:.2px;padding:2px 7px;border-radius:10px;white-space:nowrap;margin-left:5px}
+.w-tag-u{color:var(--navy2);background:rgba(0,75,173,.08);border:1px solid rgba(0,75,173,.2)}
+.w-tag-g{color:var(--text3);background:var(--surf2);border:1px solid var(--bdr2)}
+@media(prefers-color-scheme:dark){
+  .w-tag-u{color:#6CA8F5;background:rgba(58,128,232,.15);border-color:rgba(58,128,232,.3)}
+}
+:root[data-theme=dark] .w-tag-u{color:#6CA8F5;background:rgba(58,128,232,.15);border-color:rgba(58,128,232,.3)}
+
+/* ── Chart ─────────────────────────────────────────────────────────── */
+.chart-card{background:var(--surf);border:1px solid var(--bdr);border-radius:8px;padding:22px 24px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.chart-svg{width:100%;height:auto;display:block}
+
+/* ── Footer ────────────────────────────────────────────────────────── */
+.ft{background:#002766;color:rgba(255,255,255,.5);padding:18px 0;font-size:12px}
+.ft-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ft a{color:rgba(255,255,255,.7);text-decoration:none}
+.ft a:hover{color:#fff;text-decoration:underline}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media(max-width:840px){
+  .hero{grid-template-columns:1fr}
+  .h-stats{flex-direction:row;flex-wrap:wrap}
+  .fg{grid-template-columns:1fr 1fr}
+  .fin-hdr,.fin-row{grid-template-columns:1fr 80px}
+  .fin-tier,.fin-t{display:none}
+  .gcc-hdr,.gcc-row{grid-template-columns:90px 1fr 110px}
+  .gcc-bg{display:none}
+}
+@media(max-width:600px){
+  .fg{grid-template-columns:1fr 1fr}
+  .h-num{font-size:68px}
+  .ph-meta{display:none}
+  .wld{grid-template-columns:1fr}
+  .wld-r:nth-child(odd){border-right:none}
+  .wld-r:nth-last-child(-n+2){border-bottom:1px solid var(--bdr2)}
+  .wld-r:last-child{border-bottom:none}
+}
+@media print{
+  body{background:#fff}
+  .ph,.hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .fin,.gcc,.wld,.chart-card,.fc{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="ph">
+  <div class="wrap">
+    <div class="ph-in">
+      <div class="ph-brand">
+        <div class="ph-flag">🇦🇪</div>
+        <div>
+          <div class="ph-dept">Department of Finance</div>
+          <div class="ph-govt">Government of Dubai</div>
+        </div>
+      </div>
+      <div class="ph-centre">
+        <div class="ph-title">UAE Competitiveness</div>
+        <div class="ph-sub">IMD World Competitiveness Yearbook</div>
+      </div>
+      <div class="ph-meta">As of 2025</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- Hero -->
+    <div class="sec">
+      <div class="hero">
+        <div>
+          <div class="h-eyebrow">IMD World Competitiveness Yearbook 2025</div>
+          <div class="h-num" id="hnum">—</div>
+          <div class="h-lbl">Overall rank out of <strong id="htot" style="color:#fff">67</strong> economies</div>
+          <div class="h-trend" id="htrd"></div>
+        </div>
+        <div class="h-stats" id="hstats"></div>
+      </div>
+    </div>
+
+    <!-- 4 Factors -->
+    <div class="sec">
+      <div class="sh">Ranking by Factor <span class="sh-sub">4 IMD pillars · 2025</span></div>
+      <div class="fg" id="fg"></div>
+    </div>
+
+    <!-- Finance Focus -->
+    <div class="sec">
+      <div class="sh">Finance Focus <span class="sh-sub">Sub-factors of strategic relevance · 2025</span></div>
+      <div class="fin" id="fin">
+        <div class="fin-hdr">
+          <div>Sub-factor</div><div>Rank</div>
+          <div class="fin-tier">Tier</div>
+          <div class="fin-t">2025 vs 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GCC Snapshot -->
+    <div class="sec">
+      <div class="sh">GCC Competitiveness <span class="sh-sub">All 6 member states · 2025 overall rank</span></div>
+      <div class="gcc" id="gcc">
+        <div class="gcc-hdr">
+          <div>GCC rank</div><div>Economy</div><div>Global rank</div><div>Competitiveness</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- World Context -->
+    <div class="sec">
+      <div class="sh">Global Context <span class="sh-sub">IMD 2025 · top 10 of 67 economies</span></div>
+      <div class="wld" id="wld"></div>
+    </div>
+
+    <!-- Chart -->
+    <div class="sec">
+      <div class="sh">Progress Over Time <span class="sh-sub">UAE vs GCC · overall rank 2018–2025 · rank 1 = best</span></div>
+      <p class="note">UAE (solid navy) vs GCC economies (dashed). Partial lines where countries joined the index later. Source: IMD World Competitiveness Yearbook.</p>
+      <div class="chart-card">
+        <svg id="csvg" class="chart-svg" viewBox="0 0 720 370"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="UAE and GCC IMD competitiveness trends 2018–2025"></svg>
+      </div>
+    </div>
+
+  </div><!-- .wrap -->
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-in">
+      <div>
+        <strong style="color:rgba(255,255,255,.8)">Sources:</strong>
+        IMD World Competitiveness Yearbook —
+        <a href="https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/world-competitiveness-ranking/" target="_blank" rel="noopener">imd.org</a>
+        &nbsp;·&nbsp; UAE Government Portal —
+        <a href="https://u.ae/en/about-the-uae/uae-competitiveness/imd-world-competitiveness-yearbook" target="_blank" rel="noopener">u.ae</a>
+      </div>
+      <div>Prepared by Department of Finance, Dubai &nbsp;·&nbsp; Data: July 2026</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* ── Data ──────────────────────────────────────────────────────────── */
+const YR = 2025, PY = 2024, TOT = 67;
+
+// c=country, y=year, m=metric key, r=rank
+const ROWS = [
+  // UAE overall
+  {c:'UAE',y:2018,m:'or',r:7},{c:'UAE',y:2019,m:'or',r:5},
+  {c:'UAE',y:2020,m:'or',r:9},{c:'UAE',y:2021,m:'or',r:9},
+  {c:'UAE',y:2022,m:'or',r:12},{c:'UAE',y:2023,m:'or',r:10},
+  {c:'UAE',y:2024,m:'or',r:7},{c:'UAE',y:2025,m:'or',r:5},
+  // UAE factors 2025 + 2024 (for YoY)
+  {c:'UAE',y:2025,m:'ep',r:2},{c:'UAE',y:2024,m:'ep',r:2},
+  {c:'UAE',y:2025,m:'ge',r:4},{c:'UAE',y:2024,m:'ge',r:4},
+  {c:'UAE',y:2025,m:'be',r:3},{c:'UAE',y:2024,m:'be',r:10},
+  {c:'UAE',y:2025,m:'if',r:23},{c:'UAE',y:2024,m:'if',r:25},
+  // UAE finance sub-factors 2025 + 2024
+  {c:'UAE',y:2025,m:'pf',r:6},{c:'UAE',y:2024,m:'pf',r:2},
+  {c:'UAE',y:2025,m:'tp',r:3},{c:'UAE',y:2024,m:'tp',r:5},
+  {c:'UAE',y:2025,m:'bl',r:12},{c:'UAE',y:2024,m:'bl',r:8},
+  // Saudi Arabia 2020–2025
+  {c:'Saudi Arabia',y:2020,m:'or',r:24},{c:'Saudi Arabia',y:2021,m:'or',r:32},
+  {c:'Saudi Arabia',y:2022,m:'or',r:24},{c:'Saudi Arabia',y:2023,m:'or',r:17},
+  {c:'Saudi Arabia',y:2024,m:'or',r:16},{c:'Saudi Arabia',y:2025,m:'or',r:17},
+  // Qatar 2018–2025
+  {c:'Qatar',y:2018,m:'or',r:14},{c:'Qatar',y:2019,m:'or',r:10},
+  {c:'Qatar',y:2020,m:'or',r:14},{c:'Qatar',y:2021,m:'or',r:17},
+  {c:'Qatar',y:2022,m:'or',r:18},{c:'Qatar',y:2023,m:'or',r:12},
+  {c:'Qatar',y:2024,m:'or',r:11},{c:'Qatar',y:2025,m:'or',r:9},
+  // Bahrain (joined 2022)
+  {c:'Bahrain',y:2022,m:'or',r:30},{c:'Bahrain',y:2023,m:'or',r:25},
+  {c:'Bahrain',y:2024,m:'or',r:21},{c:'Bahrain',y:2025,m:'or',r:22},
+  // Kuwait (joined 2023)
+  {c:'Kuwait',y:2023,m:'or',r:38},{c:'Kuwait',y:2024,m:'or',r:37},
+  {c:'Kuwait',y:2025,m:'or',r:36},
+  // Oman (joined 2025)
+  {c:'Oman',y:2025,m:'or',r:28},
+];
+
+const TOP10 = [
+  {r:1,c:'Switzerland'},{r:2,c:'Singapore'},{r:3,c:'Hong Kong SAR'},
+  {r:4,c:'Denmark'},{r:5,c:'UAE'},{r:6,c:'Taiwan'},
+  {r:7,c:'Ireland'},{r:8,c:'Sweden'},{r:9,c:'Qatar'},{r:10,c:'Netherlands'},
+];
+
+const MET = {
+  or:'Overall Rank',ep:'Economic Performance',ge:'Government Efficiency',
+  be:'Business Efficiency',if:'Infrastructure',
+  pf:'Public Finance',tp:'Tax Policy',bl:'Business Legislation',
+};
+
+/* ── Lookup ────────────────────────────────────────────────────────── */
+const lk = {};
+for (const r of ROWS) {
+  if (!lk[r.c]) lk[r.c] = {};
+  if (!lk[r.c][r.m]) lk[r.c][r.m] = {};
+  lk[r.c][r.m][r.y] = r.r;
+}
+function val(c,m,y){ return (lk[c]&&lk[c][m]&&lk[c][m][y]!=null)?lk[c][m][y]:null; }
+
+/* ── Helpers ───────────────────────────────────────────────────────── */
+function ord(n){
+  if(n==null) return 'n/a';
+  var v=n%100;
+  if(v>=11&&v<=13) return n+'th';
+  return n+({1:'st',2:'nd',3:'rd'}[n%10]||'th');
+}
+function sup(n){
+  if(n==null) return '';
+  var v=n%100;
+  if(v>=11&&v<=13) return 'th';
+  return {1:'st',2:'nd',3:'rd'}[n%10]||'th';
+}
+function bcls(r){
+  if(r==null) return 'bdg-nt';
+  if(r<=10)   return 'bdg-ok';
+  if(r<=30)   return 'bdg-wn';
+  return 'bdg-bd';
+}
+function fcls(r){
+  if(r==null) return '';
+  if(r<=10)   return 'ok';
+  if(r<=30)   return 'wn';
+  return 'bd';
+}
+function tier(r){
+  if(r==null) return 'n/a';
+  if(r<=10)   return 'Top 10';
+  if(r<=30)   return 'Top 30';
+  return 'Top '+TOT;
+}
+function yoy(c,p){
+  if(c==null||p==null) return null;
+  var d=c-p;
+  if(!d) return {s:'flat',a:'—',l:'Unchanged'};
+  return d<0
+    ? {s:'up',  a:'▲',l:Math.abs(d)+' from '+ord(p)}
+    : {s:'down',a:'▼',l:d+' from '+ord(p)};
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────── */
+var hr=val('UAE','or',YR), hp=val('UAE','or',PY);
+document.getElementById('hnum').innerHTML=hr+'<sup>'+sup(hr)+'</sup>';
+document.getElementById('htot').textContent=TOT;
+
+var ht=yoy(hr,hp);
+if(ht) document.getElementById('htrd').innerHTML=
+  '<span class="'+ht.s+'">'+ht.a+' '+ht.l+' in '+PY+'</span>';
+
+// GCC position for hero stat — computed after GCC data below
+var GCC=['UAE','Saudi Arabia','Qatar','Kuwait','Bahrain','Oman'];
+var FLAGS={UAE:'🇦🇪','Saudi Arabia':'🇸🇦',Qatar:'🇶🇦',Kuwait:'🇰🇼',Bahrain:'🇧🇭',Oman:'🇴🇲'};
+var POS=['1st','2nd','3rd','4th','5th','6th'];
+
+var ranked=GCC.map(function(c){return{c:c,r:val(c,'or',YR)};})
+  .filter(function(x){return x.r!=null;})
+  .sort(function(a,b){return a.r-b.r;});
+var gccPos=ranked.findIndex(function(x){return x.c==='UAE';})+1;
+
+document.getElementById('hstats').innerHTML=
+  '<div class="h-stat"><div class="h-sv">'+YR+'</div><div class="h-sl">Year</div></div>'+
+  '<div class="h-stat"><div class="h-sv">'+TOT+'</div><div class="h-sl">Economies</div></div>'+
+  '<div class="h-stat"><div class="h-sv">'+(POS[gccPos-1]||gccPos+'th')+'</div><div class="h-sl">In GCC</div></div>';
+
+/* ── Factor cards ──────────────────────────────────────────────────── */
+var FACTS=[['ep','Economic Performance'],['ge','Government Efficiency'],
+           ['be','Business Efficiency'],['if','Infrastructure']];
+document.getElementById('fg').innerHTML=FACTS.map(function(mla){
+  var m=mla[0],lbl=mla[1];
+  var r=val('UAE',m,YR),p=val('UAE',m,PY),t=yoy(r,p);
+  return '<div class="fc '+fcls(r)+'">'+
+    '<div class="fc-name">'+lbl+'</div>'+
+    '<div class="fc-rank">'+ord(r)+'</div>'+
+    '<span class="bdg '+bcls(r)+'">'+tier(r)+'</span>'+
+    '<div class="fc-t '+(t?t.s:'flat')+'">'+
+      (t ? t.a+' '+t.l : '— prior n/a')+
+    '</div>'+
+  '</div>';
+}).join('');
+
+/* ── Finance panel ─────────────────────────────────────────────────── */
+var FINS=[['pf','Public Finance'],['tp','Tax Policy'],['bl','Business Legislation']];
+document.getElementById('fin').insertAdjacentHTML('beforeend',
+  FINS.map(function(mla){
+    var m=mla[0],lbl=mla[1];
+    var r=val('UAE',m,YR),p=val('UAE',m,PY),t=yoy(r,p);
+    return '<div class="fin-row">'+
+      '<div class="fin-m">'+lbl+'</div>'+
+      '<div class="fin-r">'+ord(r)+'</div>'+
+      '<div class="fin-tier"><span class="bdg '+bcls(r)+'">'+tier(r)+'</span></div>'+
+      '<div class="fin-t '+(t?t.s:'flat')+'">'+
+        (t ? t.a+' '+t.l : '—')+
+      '</div>'+
+    '</div>';
+  }).join('')
+);
+
+/* ── GCC Snapshot ──────────────────────────────────────────────────── */
+document.getElementById('gcc').insertAdjacentHTML('beforeend',
+  ranked.map(function(item,i){
+    var isU=item.c==='UAE';
+    var pct=Math.round((TOT-item.r)/(TOT-1)*100);
+    return '<div class="gcc-row'+(isU?' gcc-uae':'')+'">'+
+      '<div class="gcc-p">'+(POS[i]||i+1+'. ')+' in GCC</div>'+
+      '<div class="gcc-n">'+(FLAGS[item.c]||'')+'&nbsp;'+item.c+'</div>'+
+      '<div class="gcc-r">'+ord(item.r)+' globally</div>'+
+      '<div class="gcc-bg"><div class="gcc-b '+(isU?'gcc-bu':'gcc-bd')+'" style="width:'+pct+'%"></div></div>'+
+    '</div>';
+  }).join('')
+);
+
+/* ── World panel ───────────────────────────────────────────────────── */
+document.getElementById('wld').innerHTML=TOP10.map(function(e){
+  var isU=e.c==='UAE', isG=!isU&&GCC.indexOf(e.c)>-1;
+  var flag=FLAGS[e.c]||'';
+  var tag=isU  ?'<span class="w-tag w-tag-u">1st in GCC</span>'
+         :isG  ?'<span class="w-tag w-tag-g">GCC</span>':'';
+  return '<div class="wld-r'+(isU?' wld-uae':'')+'">'+
+    '<div class="wld-pos">#'+e.r+'</div>'+
+    '<div class="wld-nm">'+(flag?flag+'&nbsp;':'')+e.c+' '+tag+'</div>'+
+  '</div>';
+}).join('');
+
+/* ── SVG Chart ─────────────────────────────────────────────────────── */
+(function(){
+  var svg=document.getElementById('csvg');
+  if(!svg) return;
+
+  // Read theme tokens
+  var cs=getComputedStyle(document.documentElement);
+  function tok(v){return cs.getPropertyValue(v).trim();}
+  var CGRID=tok('--bdr2')||'#E6ECF4';
+  var CAXIS=tok('--bdr') ||'#D4DCE8';
+  var CLBL =tok('--text3')||'#7A96AE';
+  var CBKG =tok('--surf2')||'#F3F6FB';
+
+  var W=720, H=370;
+  var PL=52,PR=18,PT=16,PB=70;
+  var PW=W-PL-PR, PH=H-PT-PB;
+  var YEARS=[2018,2019,2020,2021,2022,2023,2024,2025];
+  var RMAX=42;
+
+  function xOf(y){return PL+(y-2018)/7*PW;}
+  function yOf(r){return PT+(r-1)/(RMAX-1)*PH;}
+
+  function ns(tag,attrs,txt){
+    var e=document.createElementNS('http://www.w3.org/2000/svg',tag);
+    for(var k in attrs) e.setAttribute(k,attrs[k]);
+    if(txt!=null) e.textContent=String(txt);
+    return e;
+  }
+  function add(e){svg.appendChild(e);}
+
+  // Plot background
+  add(ns('rect',{x:PL,y:PT,width:PW,height:PH,fill:CBKG,rx:'3'}));
+
+  // Horizontal grid + Y labels
+  [1,5,10,15,20,25,30,35,42].forEach(function(r){
+    var y=yOf(r);
+    add(ns('line',{x1:PL,y1:y,x2:PL+PW,y2:y,stroke:r===1?CAXIS:CGRID,'stroke-width':r===1?'1':'1'}));
+    add(ns('text',{x:PL-7,y:y+4,'text-anchor':'end',fill:CLBL,'font-size':'11',
+      'font-family':'Segoe UI,Arial,sans-serif','font-variant-numeric':'tabular-nums'},'#'+r));
+  });
+
+  // Vertical grid + X labels
+  YEARS.forEach(function(y){
+    var x=xOf(y);
+    add(ns('line',{x1:x,y1:PT,x2:x,y2:PT+PH,stroke:CGRID,'stroke-width':'1'}));
+    add(ns('text',{x:x,y:PT+PH+14,'text-anchor':'middle',fill:CLBL,
+      'font-size':'11','font-family':'Segoe UI,Arial,sans-serif'},String(y)));
+  });
+
+  // Border frame
+  add(ns('rect',{x:PL,y:PT,width:PW,height:PH,fill:'none',stroke:CAXIS,'stroke-width':'1.5',rx:'3'}));
+
+  // Series: GCC first (background), UAE last (foreground)
+  var SERIES=[
+    {k:'Saudi Arabia',col:'#2E7D32',w:'1.5',d:'5,4',dot:3.5},
+    {k:'Qatar',       col:'#B83232',w:'1.5',d:'5,4',dot:3.5},
+    {k:'Bahrain',     col:'#7B3F9E',w:'1.5',d:'5,4',dot:3.5},
+    {k:'Kuwait',      col:'#D06E00',w:'1.5',d:'5,4',dot:3.5},
+    {k:'Oman',        col:'#1A6E70',w:'1.5',d:'5,4',dot:3.5},
+    {k:'UAE',         col:'#004BAD',w:'3',  d:'',   dot:5.5},
+  ];
+
+  SERIES.forEach(function(s){
+    var pts=YEARS.map(function(y){
+      var r=val(s.k,'or',y);
+      return r!=null ? {x:xOf(y),y:yOf(r)} : null;
+    });
+
+    // Path
+    var d='', prev=false;
+    pts.forEach(function(p){
+      if(!p){prev=false;return;}
+      d+=(prev?'L':'M')+p.x.toFixed(1)+','+p.y.toFixed(1);
+      prev=true;
+    });
+    if(d) add(ns('path',{d:d,fill:'none',stroke:s.col,
+      'stroke-width':s.w,'stroke-dasharray':s.d,
+      'stroke-linejoin':'round','stroke-linecap':'round'}));
+
+    // Dots
+    pts.forEach(function(p){
+      if(!p) return;
+      add(ns('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),
+        r:String(s.dot),fill:s.col,stroke:'#fff','stroke-width':'2'}));
+    });
+  });
+
+  // Legend (one row, centred below chart)
+  var LW=PW/SERIES.length;
+  SERIES.forEach(function(s,i){
+    var lx=PL+i*LW+4, ly=H-24;
+    add(ns('line',{x1:lx,y1:ly,x2:lx+20,y2:ly,
+      stroke:s.col,'stroke-width':s.w,'stroke-dasharray':s.d}));
+    add(ns('circle',{cx:lx+10,cy:ly,r:String(s.dot),
+      fill:s.col,stroke:'#fff','stroke-width':'1.5'}));
+    add(ns('text',{x:lx+25,y:ly+4,fill:CLBL,
+      'font-size':'11','font-family':'Segoe UI,Arial,sans-serif'},s.k));
+  });
+
+  // Y-axis label (rotated)
+  var yl=ns('text',{
+    transform:'rotate(-90) translate(-'+(PT+PH/2)+',14)',
+    'text-anchor':'middle',fill:CLBL,
+    'font-size':'10','font-family':'Segoe UI,Arial,sans-serif',
+  },'Overall IMD Rank  (1 = best)');
+  add(yl);
+})();
+
+})();
+</script>
+</body>
+</html>
