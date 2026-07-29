@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UAE Competitiveness · IMD 2025 · Department of Finance, Dubai</title>
+<title>UAE Competitiveness · IMD 2026 · Department of Finance, Dubai</title>
 <style>
 /* ── Design tokens ─────────────────────────────────────────────────── */
 :root {
@@ -240,7 +240,7 @@ main{padding:40px 0 70px}
         </div>
       </div>
       <div class="ph-meta">
-        <span class="ph-pill">IMD 2025</span>
+        <span class="ph-pill">IMD 2026</span>
       </div>
     </div>
   </div>
@@ -253,9 +253,9 @@ main{padding:40px 0 70px}
     <div class="sec">
       <div class="hero">
         <div>
-          <div class="h-eyebrow">IMD World Competitiveness Yearbook 2025</div>
+          <div class="h-eyebrow">IMD World Competitiveness Yearbook 2026</div>
           <div class="h-num tnum" id="hnum">—</div>
-          <div class="h-lbl">Overall rank among <strong id="htot" style="color:#fff">67</strong> world economies</div>
+          <div class="h-lbl">Overall rank among <strong id="htot" style="color:#fff">70</strong> world economies</div>
           <div class="h-trend" id="htrd"></div>
         </div>
         <div class="h-stats" id="hstats"></div>
@@ -264,36 +264,36 @@ main{padding:40px 0 70px}
 
     <!-- 4 Factors -->
     <div class="sec">
-      <div class="sh">Ranking by Factor <span class="sh-sub">4 IMD pillars · 2025</span></div>
+      <div class="sh">Ranking by Factor <span class="sh-sub">4 IMD pillars · 2026</span></div>
       <div class="fg" id="fg"></div>
     </div>
 
     <!-- Finance Focus -->
     <div class="sec">
-      <div class="sh">Finance Focus <span class="sh-sub">Sub-factors of strategic relevance · 2025</span></div>
+      <div class="sh">Finance Focus <span class="sh-sub">Sub-factors of strategic relevance · 2025 (latest available)</span></div>
       <div class="fin" id="fin"></div>
     </div>
 
     <!-- GCC Snapshot -->
     <div class="sec">
-      <div class="sh">GCC Competitiveness <span class="sh-sub">All 6 member states · 2025 overall rank</span></div>
+      <div class="sh">GCC Competitiveness <span class="sh-sub">All 6 member states · 2026 overall rank</span></div>
       <div class="gcc" id="gcc"></div>
     </div>
 
     <!-- World Context -->
     <div class="sec">
-      <div class="sh">Global Context <span class="sh-sub">IMD 2025 · top 10 of 67 economies</span></div>
+      <div class="sh">Global Context <span class="sh-sub">IMD 2026 · top 10 of 70 economies</span></div>
       <div class="wld" id="wld"></div>
     </div>
 
     <!-- Chart -->
     <div class="sec">
-      <div class="sh">Progress Over Time <span class="sh-sub">UAE vs GCC · overall rank 2018–2025 · rank 1 = best</span></div>
+      <div class="sh">Progress Over Time <span class="sh-sub">UAE vs GCC · overall rank 2018–2026 · rank 1 = best</span></div>
       <p class="note">UAE (solid gold) vs GCC economies (muted grey). Partial lines where countries joined the index later. Source: IMD World Competitiveness Yearbook.</p>
       <div class="chart-card">
         <svg id="csvg" class="chart-svg" viewBox="0 0 720 370"
           xmlns="http://www.w3.org/2000/svg"
-          aria-label="UAE and GCC IMD competitiveness trends 2018–2025"></svg>
+          aria-label="UAE and GCC IMD competitiveness trends 2018–2026"></svg>
       </div>
     </div>
 
@@ -320,7 +320,7 @@ main{padding:40px 0 70px}
 'use strict';
 
 /* ── Data ──────────────────────────────────────────────────────────── */
-const YR = 2025, PY = 2024, TOT = 67;
+const YR = 2026, PY = 2025, TOT = 70;
 const MASKED = 'Qatar'; // per distribution policy: never named in UI, shown only as an unlabelled GCC data point
 
 // c=country, y=year, m=metric key, r=rank
@@ -330,38 +330,42 @@ const ROWS = [
   {c:'UAE',y:2020,m:'or',r:9},{c:'UAE',y:2021,m:'or',r:9},
   {c:'UAE',y:2022,m:'or',r:12},{c:'UAE',y:2023,m:'or',r:10},
   {c:'UAE',y:2024,m:'or',r:7},{c:'UAE',y:2025,m:'or',r:5},
-  // UAE factors 2025 + 2024 (for YoY)
-  {c:'UAE',y:2025,m:'ep',r:2},{c:'UAE',y:2024,m:'ep',r:2},
-  {c:'UAE',y:2025,m:'ge',r:4},{c:'UAE',y:2024,m:'ge',r:4},
-  {c:'UAE',y:2025,m:'be',r:3},{c:'UAE',y:2024,m:'be',r:10},
-  {c:'UAE',y:2025,m:'if',r:23},{c:'UAE',y:2024,m:'if',r:25},
-  // UAE finance sub-factors 2025 + 2024
+  {c:'UAE',y:2026,m:'or',r:5},
+  // UAE factors 2026 + 2025 (for YoY)
+  {c:'UAE',y:2026,m:'ep',r:1},{c:'UAE',y:2025,m:'ep',r:2},
+  {c:'UAE',y:2026,m:'ge',r:4},{c:'UAE',y:2025,m:'ge',r:4},
+  {c:'UAE',y:2026,m:'be',r:11},{c:'UAE',y:2025,m:'be',r:3},
+  {c:'UAE',y:2026,m:'if',r:22},{c:'UAE',y:2025,m:'if',r:23},
+  // UAE finance sub-factors — 2026 not in free booklet; 2025 is latest available
   {c:'UAE',y:2025,m:'pf',r:6},{c:'UAE',y:2024,m:'pf',r:2},
   {c:'UAE',y:2025,m:'tp',r:3},{c:'UAE',y:2024,m:'tp',r:5},
   {c:'UAE',y:2025,m:'bl',r:12},{c:'UAE',y:2024,m:'bl',r:8},
-  // Saudi Arabia 2020–2025
+  // Saudi Arabia 2020–2026
   {c:'Saudi Arabia',y:2020,m:'or',r:24},{c:'Saudi Arabia',y:2021,m:'or',r:32},
   {c:'Saudi Arabia',y:2022,m:'or',r:24},{c:'Saudi Arabia',y:2023,m:'or',r:17},
   {c:'Saudi Arabia',y:2024,m:'or',r:16},{c:'Saudi Arabia',y:2025,m:'or',r:17},
-  // Qatar 2018–2025
+  {c:'Saudi Arabia',y:2026,m:'or',r:13},
+  // Qatar 2018–2026
   {c:'Qatar',y:2018,m:'or',r:14},{c:'Qatar',y:2019,m:'or',r:10},
   {c:'Qatar',y:2020,m:'or',r:14},{c:'Qatar',y:2021,m:'or',r:17},
   {c:'Qatar',y:2022,m:'or',r:18},{c:'Qatar',y:2023,m:'or',r:12},
   {c:'Qatar',y:2024,m:'or',r:11},{c:'Qatar',y:2025,m:'or',r:9},
+  {c:'Qatar',y:2026,m:'or',r:11},
   // Bahrain (joined 2022)
   {c:'Bahrain',y:2022,m:'or',r:30},{c:'Bahrain',y:2023,m:'or',r:25},
   {c:'Bahrain',y:2024,m:'or',r:21},{c:'Bahrain',y:2025,m:'or',r:22},
+  {c:'Bahrain',y:2026,m:'or',r:20},
   // Kuwait (joined 2023)
   {c:'Kuwait',y:2023,m:'or',r:38},{c:'Kuwait',y:2024,m:'or',r:37},
-  {c:'Kuwait',y:2025,m:'or',r:36},
+  {c:'Kuwait',y:2025,m:'or',r:36},{c:'Kuwait',y:2026,m:'or',r:31},
   // Oman (joined 2025)
-  {c:'Oman',y:2025,m:'or',r:28},
+  {c:'Oman',y:2025,m:'or',r:28},{c:'Oman',y:2026,m:'or',r:25},
 ];
 
 const TOP10 = [
-  {r:1,c:'Switzerland'},{r:2,c:'Singapore'},{r:3,c:'Hong Kong SAR'},
-  {r:4,c:'Denmark'},{r:5,c:'UAE'},{r:6,c:'Taiwan'},
-  {r:7,c:'Ireland'},{r:8,c:'Sweden'},{r:9,c:'Qatar'},{r:10,c:'Netherlands'},
+  {r:1,c:'Singapore'},{r:2,c:'Hong Kong SAR'},{r:3,c:'Switzerland'},
+  {r:4,c:'Taiwan'},{r:5,c:'UAE'},{r:6,c:'Denmark'},
+  {r:7,c:'Ireland'},{r:8,c:'Netherlands'},{r:9,c:'Sweden'},{r:10,c:'USA'},
 ];
 
 const MET = {
@@ -465,11 +469,13 @@ document.getElementById('fg').innerHTML=FACTS.map(function(mla){
 }).join('');
 
 /* ── Finance panel ─────────────────────────────────────────────────── */
+// Sub-factor breakdown is not published in the free booklet; 2025 is the latest available year.
+var FIN_YR=2025, FIN_PY=2024;
 var FINS=[['pf','Public Finance'],['tp','Tax Policy'],['bl','Business Legislation']];
 document.getElementById('fin').innerHTML=
   FINS.map(function(mla){
     var m=mla[0],lbl=mla[1];
-    var r=val('UAE',m,YR),p=val('UAE',m,PY),t=yoy(r,p);
+    var r=val('UAE',m,FIN_YR),p=val('UAE',m,FIN_PY),t=yoy(r,p);
     var pct=r!=null?Math.round((TOT-r)/(TOT-1)*100):0;
     return '<div class="fin-row">'+
       '<div><div class="fin-m">'+lbl+'</div><div class="fin-bar"><div class="fin-bar-b" style="width:'+pct+'%"></div></div></div>'+
@@ -529,10 +535,10 @@ document.getElementById('wld').innerHTML=TOP10.map(function(e){
   var W=720, H=370;
   var PL=52,PR=18,PT=16,PB=70;
   var PW=W-PL-PR, PH=H-PT-PB;
-  var YEARS=[2018,2019,2020,2021,2022,2023,2024,2025];
+  var YEARS=[2018,2019,2020,2021,2022,2023,2024,2025,2026];
   var RMAX=42;
 
-  function xOf(y){return PL+(y-2018)/7*PW;}
+  function xOf(y){return PL+(y-2018)/8*PW;}
   function yOf(r){return PT+(r-1)/(RMAX-1)*PH;}
 
   function ns(tag,attrs,txt){
